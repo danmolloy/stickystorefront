@@ -1,0 +1,34 @@
+<%= link_to prizes_path  do %>
+  <button class='return-button'> << Back to Prizes </button>
+<% end %>
+
+<div class='content-wrapper'>
+  <div id='conditions-list-header' class='list-header'>
+    <div id='prize-details'>
+      <h2> <%= @prize.name %> </h2>
+      <h3> Remaining stock: <%= @prize.stock %> </h3>
+    </div>
+    <div class='button-group'>
+
+      <%= link_to edit_prize_path(@prize) do%>
+        <button class='edit-button'> Edit Prize </button>
+      <% end %>
+
+      <%= link_to prize_path(@prize), data: {confirm: 'Are you sure?'}, method: :delete do%>
+        <button class='delete-button'> Delete Prize </button>
+      <% end %>
+
+      <%= link_to new_prize_condition_path(@prize) do%>
+        <button class='new-button'> Add Condition </button>
+      <% end %>
+    </div>
+  </div>
+  <div class='list' id='condition-list'>
+    <% if @conditions %>
+      <% @conditions.each do |condition| %>
+        <%= render partial: 'conditions/condition', locals: {condition: condition} %>
+        <hr>
+      <% end %>
+    <% end %>
+  </div>
+</div>

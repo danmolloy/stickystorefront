@@ -1,3 +1,65 @@
 // Place all the styles related to the prizes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$primary_color: #bbb; //body background
+$secondary_color: #eee; // header background
+$tertiary_color: #DEE3E5; //content box background
+$highlight_color: #1B2024;
+
+body{
+  background-color: $primary_color;
+
+}
+
+.content-wrapper{
+  margin-top: 100px;
+  padding: 1em 3em;
+  //padding-top: 3em;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+  background-color: $secondary_color;
+}
+
+.list-header{
+  margin-bottom: 30px;
+}
+
+#prize-list{
+  clear:both;
+  width: 100%;
+  border: 1px solid black;
+  padding: 1em;
+}
+
+.form-item{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.list-item{
+  width: 100%;
+  height: 40px;
+}
+
+.list-item-element{
+  display: inline-block;
+  width: 15%;
+}
+
+.prize-name{
+
+}
+
+.prize-stock{
+
+}
+
+.prize-conditions-count{
+
+}
+
+.item-controls{
+  float: right;
+}

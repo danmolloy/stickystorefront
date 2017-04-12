@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   post '/contest_entries', to: 'contest_entries#create'
 
-  resources :prizes
+  resources :prizes do
+    resources :conditions, except: [:index]
+  end
 end

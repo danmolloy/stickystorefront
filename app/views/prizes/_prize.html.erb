@@ -1,0 +1,16 @@
+<div class='prize list-item'>
+  <span class='list-item-element prize-name'><%= prize.name %></span>
+  <span class='list-item-element prize-stock'>Remaining: <%= prize.stock %></span>
+  <span class='list-item-element prize-conditions-count'>Conditions: <%= prize.conditions.count %></span>
+  <span class='list-item-element item-controls'>
+    <%= link_to prize_path(prize) do %>
+      <button class='show-button'> View </button>
+    <% end %>
+    <%= link_to edit_prize_path(prize) do %>
+      <button class='edit-button'> Edit </button>
+    <% end %>
+    <%= link_to  prize_path(prize), data: {confirm: 'Are you sure?'}, method: :delete do %>
+      <button class='delete-button'> Delete </button>
+    <% end %>
+  </span>
+</div>

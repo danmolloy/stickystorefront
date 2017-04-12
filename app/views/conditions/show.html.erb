@@ -1,0 +1,12 @@
+<%= link_to prize_path(@prize)  do %>
+  <button class='return-button'> << Back to <%= @prize.name %> </button>
+<% end %>
+
+<div class='content-wrapper'>
+  <div class='list-header'>
+    <h2> Win condition for  <%= @prize.name %> </h2>
+  </div>
+  <div id='condition'>
+    <%= render partial: 'conditions/condition', locals: {condition: @condition} %>
+  </div>
+</div>

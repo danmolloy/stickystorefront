@@ -1,0 +1,17 @@
+<div class='prize list-item'>
+  <span class='list-item-element condition-numbers'>Numbers: <%= condition.specific_numbers %></span>
+  <span class='list-item-element condition-multiple'>Multiple Of: <%= condition.multiple_of %></span>
+  <span class='list-item-element condition-after'>After: <%= condition.after %></span>
+  <span class='list-item-element condition-before'>Before: <%= condition.before %></span>
+  <span class='list-item-element item-controls'>
+    <%= link_to [condition.prize, condition] do %>
+      <button class='show-button'> View </button>
+    <% end %>
+    <%= link_to [:edit, condition.prize, condition] do %>
+      <button class='edit-button'> Edit </button>
+    <% end %>
+    <%= link_to  [condition.prize, condition], data: {confirm: 'Are you sure?'}, method: :delete do %>
+      <button class='delete-button'> Delete </button>
+    <% end %>
+  </span>
+</div>

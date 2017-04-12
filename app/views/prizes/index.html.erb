@@ -1,0 +1,14 @@
+  <div class='content-wrapper'>
+    <div id='prize-list-header' class='list-header'>
+      <h2> Prizes </h2>
+      <%= link_to new_prize_path do%>
+        <button class='new-button'> Add Prize </button>
+      <% end %>
+    </div>
+    <div class='list' id='prize-list'>
+      <% @prizes.each do |prize| %>
+        <%= render partial: 'prizes/prize', locals: {prize: prize} %>
+        <hr>
+      <% end %>
+    </div>
+  </div>

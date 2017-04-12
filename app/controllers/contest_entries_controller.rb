@@ -6,7 +6,7 @@ class ContestEntriesController < ApplicationController
   end
 
   private
-  def request_params
+  def entry_params
     params.require(:email)
   end
 end

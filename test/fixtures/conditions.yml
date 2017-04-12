@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  after: 1
+  before: 1
+  multiple_of: 1
+
+two:
+  after: 1
+  before: 1
+  multiple_of: 1
