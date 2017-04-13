@@ -1,3 +1,103 @@
 // Place all the styles related to the ContestEntries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background: image-url("sticky_wall.jpg") no-repeat fixed 100%;
+  background-size: cover;
+}
+.alert{
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  margin-top: 10px;
+  border-radius: 6px;
+  background-color:white;
+  padding:0.5em;
+}
+
+.alert-alert{
+  background-color: #E74C3C;
+  color: white;
+  font-size:1em;
+  font-weight:bold;
+}
+
+.user-content-wrapper{
+  margin-top: 100px;
+  padding: 1em 3em;
+  margin-left: 15%;
+  margin-right: 15%;
+  text-align: center;
+  background-color: #FFFCCF;
+  margin-bottom: 100px;
+  min-height: 600px;
+  border-radius: 30px;
+  color:#283747;
+}
+
+.user-content-wrapper h1{
+  font-size: 3em;
+}
+
+#blurb{
+  text-align: left;
+  margin: 5%;
+  padding-left: 3%;
+  font-size: 1.2em;
+}
+
+.text-input{
+  width: 60%;
+  height: 2em;
+  padding-left: 1em;
+  border-radius: 30px;
+  border: 1px solid black;
+  margin-bottom: 0.5em;
+}
+
+button, .button {
+	background-color:#1B2024;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+  border:none;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:1em;
+	font-weight:bold;
+	padding:0.5em 0.8em;
+	text-decoration:none;
+}
+
+.contest-result h1{
+  font-size: 3em;
+  margin-top: 10%;
+}
+
+.contest-result p{
+  font-size: 1.5em;
+  margin-top:5%;
+}
+
+
+#admin-button{
+  background-color: #E74C3C;
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  border:2px solid black;
+}
+
+.return-button{
+  background-color: #5DADE2;
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border:2px solid black;
+}
+
+#submit{
+  background-color: #2ECC71;
+  color:white;
+}

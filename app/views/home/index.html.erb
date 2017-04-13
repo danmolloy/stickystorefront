@@ -1,14 +1,23 @@
-<div class='content-wrapper'>
+<%= link_to prizes_path  do %>
+  <button id='admin-button'> Admin </button>
+<% end %>
 
-  <h1> Stick </h1>
-  <%= link_to prizes_path  do %>
-    <button class='admin-button'> Admin </button>
-  <% end %>
+<div class='user-content-wrapper'>
+  <h1> Stick! </h1>
+  <div id='blurb'>
+    <p> The sticky note revolution is here! For too long has humanity toiled under the burden of writing things down in notebooks! </p>
+    <p> With Stick's revolutionary StickyNote&trade; technology, prepare to be thrust into a new world of analog information storage!</p>
+    <p> Here are just a few features of StickyNotes&trade;: </p>
+    <ul>
+      <li> Come in all shapes and sizes - from square to rectangle, small to very small, and everything in between!</li>
+      <li> Every colour imaginable! </li>
+      <li> Fully compatible out of the box with Pen&trade;, Pencil&trade; and even Crayon&trade; technology! </li>
+      <li> Can stick to almost* anything! </li>
+    </ul>
+    <p> To stay up to date with the latest StickyNote&trade; news, and to be entered into a draw to win a wide range of StickyNote&trade; products, enter your email below! </p>
 
+  </div>
 
-  <p>
-    The sticky note revolution is here!
-  </p>
 
   <%= render 'contest_entries/new' %>
 </div>

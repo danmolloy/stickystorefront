@@ -1,11 +1,17 @@
-<%= link_to :root  do %>
-  <button class='return-button'> << Back to home </button>
+ <%= link_to '/' do %>
+   <button class='return-button'> << Back to home </button>
+ <% end %>
+
+<%= link_to prizes_path  do %>
+  <button id='admin-button'> Admin </button>
 <% end %>
 
-<div class='content-wrapper'>
-  <% if @entry.has_prize? %>
-    <%= render partial: 'contest_entries/win',  locals: {entry: @entry} %>
-  <% else %>
-    <%= render partial: 'contest_entries/loss', locals: {entry: @entry} %>
-  <% end %>
+<div class='user-content-wrapper'>
+  <div class='contest-result'>
+    <% if @entry.has_prize? %>
+      <%= render partial: 'contest_entries/win',  locals: {entry: @entry} %>
+    <% else %>
+      <%= render partial: 'contest_entries/loss', locals: {entry: @entry} %>
+    <% end %>
+  </div>
 </div>

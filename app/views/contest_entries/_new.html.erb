@@ -1,6 +1,6 @@
 <div id='subscribe-form-wrapper'>
   <%= form_with url: '/contest_entries', id:'subscribe-form' do %>
-    <%= email_field_tag 'email', nil, id: 'email' %>
-    <%= submit_tag 'Subscribe!', id: 'submit'%>
+    <%= email_field_tag 'email', nil, id: 'email', class: 'text-input' %>
+    <%= submit_tag 'Subscribe!', id: 'submit', class: 'button'%>
   <% end %>
 </div>
