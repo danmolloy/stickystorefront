@@ -1,6 +1,6 @@
 class MultipleConditionValidator < ActiveModel::Validator
   def validate(condition)
-     if condition.multiple_of <= 0
+     if condition.multiple_of && condition.multiple_of <= 0
        condition.errors[:base] << "\"Multiple of\" must be greater than zero!"
      end
      if condition.after && condition.after < 0
