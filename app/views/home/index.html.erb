@@ -1,7 +1,14 @@
-<h1> Stick </h1>
+<div class='content-wrapper'>
 
-<p>
-  The sticky note revolution is here!
-</p>
+  <h1> Stick </h1>
+  <%= link_to prizes_path  do %>
+    <button class='admin-button'> Admin </button>
+  <% end %>
 
-<%= render 'contest_entries/new' %>
+
+  <p>
+    The sticky note revolution is here!
+  </p>
+
+  <%= render 'contest_entries/new' %>
+</div>

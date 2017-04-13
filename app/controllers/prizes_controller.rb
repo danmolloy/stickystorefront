@@ -16,7 +16,7 @@ class PrizesController < ApplicationController
       flash[:notice] = 'Prize creation successful'
       redirect_to prize_path(@prize)
     else
-      flash[:alert] = 'Error creating prize'
+      flash.now[:alert] = 'Error creating prize'
       render :new
     end
   end

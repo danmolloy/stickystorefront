@@ -1,9 +1,8 @@
 <%= link_to prize_path(@prize)  do %>
-  <button class='return-button'> << Back to Prizes </button>
+  <button class='return-button'> << Back to <%= @prize.name %> </button>
 <% end %>
 
 <div class='content-wrapper'>
   <h2> New Condition </h2>
-
   <%= render partial: 'conditions/form', locals: {mode: :new } %>
 </div>

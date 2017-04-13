@@ -1,0 +1,11 @@
+<%= link_to :root  do %>
+  <button class='return-button'> << Back to home </button>
+<% end %>
+
+<div class='content-wrapper'>
+  <% if @entry.has_prize? %>
+    <%= render partial: 'contest_entries/win',  locals: {entry: @entry} %>
+  <% else %>
+    <%= render partial: 'contest_entries/loss', locals: {entry: @entry} %>
+  <% end %>
+</div>

@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411210622) do
+ActiveRecord::Schema.define(version: 20170412224752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "conditions", force: :cascade do |t|
     t.bigint "prize_id"
-    t.integer "specific_numbers", array: true
+    t.integer "numbers", array: true
     t.integer "after"
     t.integer "before"
     t.integer "multiple_of"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "type"
     t.index ["prize_id"], name: "index_conditions_on_prize_id"
   end
 
@@ -30,6 +31,7 @@ ActiveRecord::Schema.define(version: 20170411210622) do
     t.bigint "email_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "prize_won"
     t.index ["email_id"], name: "index_contest_entries_on_email_id"
   end
 
@@ -45,6 +47,7 @@ ActiveRecord::Schema.define(version: 20170411210622) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "reserves"
   end
 
   create_table "tests", force: :cascade do |t|

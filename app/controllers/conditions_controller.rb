@@ -16,8 +16,10 @@ class ConditionsController < ApplicationController
       flash[:notice] = 'Condition creation successful'
       redirect_to prize_path(@prize)
     else
-      flash[:alert] = 'Error creating condition'
-      render :new
+      @condition.errors.each do |key, message|
+        flash[:alert] = "Error: #{message}"
+      end
+      redirect_back(fallback_location: prize_path(@prize))
     end
   end
 
@@ -29,7 +31,7 @@ class ConditionsController < ApplicationController
       flash[:notice] = 'Update successful'
       redirect_to prize_path(@prize)
     else
-      flash[:alert] = 'Error updating condition'
+      flash.now[:alert] = 'Error updating condition'
       render :edit
     end
   end
@@ -39,14 +41,16 @@ class ConditionsController < ApplicationController
       flash[:notice] = 'Deletion successful'
       redirect_to prize_path(@prize)
     else
-      flash[:alert] = 'Error deleting condition'
+      flash.now[:alert] = 'Error deleting condition'
     end
   end
 
   private
   def condition_params
-    params.require(:condition).permit(:after, :before,
-                                      :multiple_of, :specific_numbers, :id)
+    params['condition']['numbers'] = params['condition']['numbers'].gsub(/[\.,]/, '').split(' ')
+    p params
+    params.require(:condition).permit(:after, :before, :type,
+                                      :multiple_of, {numbers: []}, :id)
   end
 
   def get_prize

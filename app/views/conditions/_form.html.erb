@@ -8,11 +8,16 @@
 
 <div class='form-wrapper'>
   <%= form_with scope: :condition, url: url, method: method do |form| %>
+  <div class='numbers-wrapper'>
     <div class='form-item'>
-      <%= label_tag :specific_numbers, 'Specific Numbers:' %>
-      <%= form.text_field :specific_numbers %>
+      <%= form.radio_button(:type, "NumericCondition") %>
+      <%= label_tag :numbers, 'Numbers:' %>
+      <%= form.text_field :numbers %>
     </div>
+  </div>
+  <div class='multiples-wrapper'>
     <div class='form-item'>
+      <%= form.radio_button(:type, "MultipleCondition") %>
       <%= label_tag :multiple_of, 'Multiples Of:' %>
       <%= form.number_field :multiple_of, min: 0, step: 1 %>
     </div>
@@ -24,6 +29,7 @@
       <%= label_tag :before, 'Before:' %>
       <%= form.number_field :before, min: 0, step: 1 %>
     </div>
+  </div>
     <div class='form-item'>
       <%= form.submit %>
     </div>
