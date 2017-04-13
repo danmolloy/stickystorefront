@@ -9,6 +9,9 @@
       <h3> Remaining stock: <%= @prize.stock %> </h3>
     </div>
     <div class='button-group'>
+      <%= link_to new_prize_condition_path(@prize) do%>
+        <button class='new-button'> Add Condition </button>
+      <% end %>
 
       <%= link_to edit_prize_path(@prize) do%>
         <button class='edit-button'> Edit Prize </button>
@@ -17,17 +20,15 @@
       <%= link_to prize_path(@prize), data: {confirm: 'Are you sure?'}, method: :delete do%>
         <button class='delete-button'> Delete Prize </button>
       <% end %>
-
-      <%= link_to new_prize_condition_path(@prize) do%>
-        <button class='new-button'> Add Condition </button>
-      <% end %>
     </div>
   </div>
   <div class='list' id='condition-list'>
     <% if @conditions %>
       <% @conditions.each do |condition| %>
         <%= render partial: 'conditions/condition', locals: {condition: condition} %>
-        <hr>
+        <% if @conditions.length > 1 %>
+          <hr>
+        <% end %>
       <% end %>
     <% end %>
   </div>

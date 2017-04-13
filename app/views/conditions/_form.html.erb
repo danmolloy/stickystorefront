@@ -10,28 +10,28 @@
   <%= form_with scope: :condition, url: url, method: method do |form| %>
   <div class='numbers-wrapper'>
     <div class='form-item'>
-      <%= form.radio_button(:type, "NumericCondition") %>
-      <%= label_tag :numbers, 'Numbers:' %>
-      <%= form.text_field :numbers %>
+      <%= form.radio_button :type, "NumericCondition", class:'radio' %>
+      <%= label_tag :numbers, 'Numbers:', class:'form-label' %>
+      <%= form.text_field :numbers, class: 'text-input' %>
     </div>
   </div>
   <div class='multiples-wrapper'>
     <div class='form-item'>
-      <%= form.radio_button(:type, "MultipleCondition") %>
-      <%= label_tag :multiple_of, 'Multiples Of:' %>
-      <%= form.number_field :multiple_of, min: 0, step: 1 %>
+      <%= form.radio_button :type, "MultipleCondition", class:'radio'%>
+      <%= label_tag :multiple_of, 'Multiples Of:', class:'form-label' %>
+      <%= form.number_field :multiple_of, min: 0, step: 1, class: 'text-input' %>
     </div>
     <div class='form-item'>
-      <%= label_tag :after, 'After:' %>
-      <%= form.number_field :after, min: 0, step: 1 %>
+      <%= label_tag :after, 'After:', class:'form-label' %>
+      <%= form.number_field :after, min: 0, step: 1, class: 'text-input' %>
     </div>
     <div class='form-item'>
-      <%= label_tag :before, 'Before:' %>
-      <%= form.number_field :before, min: 0, step: 1 %>
+      <%= label_tag :before, 'Before:', class:'form-label' %>
+      <%= form.number_field :before, min: 0, step: 1, class: 'text-input' %>
     </div>
   </div>
     <div class='form-item'>
-      <%= form.submit %>
+      <%= form.submit class: 'button', id:'submit'%>
     </div>
   <% end %>
 </div>

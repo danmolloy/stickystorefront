@@ -2,16 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-$primary_color: #bbb; //body background
-$secondary_color: #eee; // header background
-$tertiary_color: #DEE3E5; //content box background
-$highlight_color: #1B2024;
-
-body{
-  background-color: $primary_color;
-
-}
-
 .content-wrapper{
   margin-top: 100px;
   padding: 1em 3em;
@@ -19,7 +9,7 @@ body{
   margin-left: 15%;
   margin-right: 15%;
   text-align: center;
-  background-color: $secondary_color;
+  background-color: #eee;
   margin-bottom: 100px;
 }
 
@@ -31,11 +21,55 @@ body{
   margin-bottom: 30px;
 }
 
-#prize-list{
+#last-entry{
+  float:right;
+}
+
+.form-label{
+  font-size: 1.5em;
+}
+
+h2{
+    font-size: 2em;
+}
+
+.list{
   clear:both;
   width: 100%;
   border: 1px solid black;
   padding: 1em;
+}
+
+.radio{
+  float:left;
+  height: 20px;
+  width: 20px;
+}
+
+.numbers-wrapper, .multiples-wrapper{
+  background-color: #ddd;
+  padding: 1em;
+  border-radius: 16px;
+}
+.multiples-wrapper{
+  margin-top:50px;
+}
+.numbers-wrapper .form-label{
+  text-align: left;
+}
+
+.multiples-wrapper .form-label{
+  text-align: left;
+}
+
+.numbers-wrapper .text-input{
+  float:right;
+  margin-right: 5%;
+
+}
+.multiples-wrapper .text-input{
+  float:right;
+  margin-right: 5%;
 }
 
 .form-item{
@@ -50,6 +84,7 @@ body{
 
 .list-item-element{
   display: inline-block;
+  font-size:1.2em;
   width: 15%;
 }
 

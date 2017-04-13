@@ -1,6 +1,7 @@
 class PrizesController < ApplicationController
   http_basic_authenticate_with name: 'admin', password: 'sticky'
   before_action :get_prize, only: [:show, :edit, :update, :destroy]
+  before_action :get_last_entry, only: [:index]
 
   def index
     @prizes = Prize.all
@@ -49,6 +50,10 @@ class PrizesController < ApplicationController
 
 
   private
+  def get_last_entry
+    @last_entry = ContestEntry.last
+  end
+
   def get_prize
     @prize = Prize.find(params[:id])
   end

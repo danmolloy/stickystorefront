@@ -11,15 +11,15 @@ body{
   margin-right: 25%;
   margin-top: 10px;
   border-radius: 6px;
-  background-color:white;
+  background-color:#5DADE2;
   padding:0.5em;
+  color:white;
+  font-size:1em;
+  font-weight:bold;
 }
 
 .alert-alert{
   background-color: #E74C3C;
-  color: white;
-  font-size:1em;
-  font-weight:bold;
 }
 
 .user-content-wrapper{
@@ -70,6 +70,10 @@ button, .button {
 	text-decoration:none;
 }
 
+.small-button{
+  padding: 0.3em;
+}
+
 .contest-result h1{
   font-size: 3em;
   margin-top: 10%;
@@ -95,6 +99,22 @@ button, .button {
   top: 50px;
   left: 50px;
   border:2px solid black;
+}
+
+.new-button{
+  background-color: #2ECC71;
+}
+
+.show-button{
+  background-color: #5DADE2;
+}
+
+.edit-button{
+  background-color: #F4D03F;
+}
+
+.delete-button{
+  background-color: #E74C3C;
 }
 
 #submit{

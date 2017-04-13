@@ -1,8 +1,12 @@
+<%= link_to root_path do %>
+  <button class='return-button'> << Back to home </button>
+<% end %>
+
   <div class='content-wrapper'>
+    <% if @last_entry %>
+      <span id='last-entry'> Last entry was #<%=@last_entry.id%>, <%=time_ago_in_words(@last_entry.created_at)%> ago </span>
+    <% end %>
     <div id='prize-list-header' class='list-header'>
-      <%= link_to :root do %>
-        <button class='home-button'> Home </button>
-      <% end %>
       <h2> Prizes </h2>
       <%= link_to new_prize_path do%>
         <button class='new-button'> Add Prize </button>

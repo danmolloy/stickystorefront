@@ -1,17 +1,24 @@
 <div class='prize list-item'>
-  <span class='list-item-element condition-numbers'>Numbers: <%= condition.numbers %></span>
-  <span class='list-item-element condition-multiple'>Multiple Of: <%= condition.multiple_of %></span>
-  <span class='list-item-element condition-after'>After: <%= condition.after %></span>
-  <span class='list-item-element condition-before'>Before: <%= condition.before %></span>
+  <% if condition.type == 'NumericCondition' %>
+    <span class='list-item-element condition-numbers'>Numbers: <%= condition.numbers.join(', ') %></span>
+  <% else %>
+    <span class='list-item-element condition-multiple'>Multiple Of: <%= condition.multiple_of %></span>
+    <% if condition.after %>
+      <span class='list-item-element condition-after'>After: <%= condition.after %></span>
+    <% end %>
+    <% if condition.before %>
+      <span class='list-item-element condition-before'>Before: <%= condition.before %></span>
+    <% end %>
+  <% end %>
   <span class='list-item-element item-controls'>
     <%= link_to prize_condition_path(@prize, condition) do %>
-      <button class='show-button'> View </button>
+      <button class='small-button show-button'> View </button>
     <% end %>
     <%= link_to edit_prize_condition_path(@prize, condition) do %>
-      <button class='edit-button'> Edit </button>
+      <button class='small-button edit-button'> Edit </button>
     <% end %>
     <%= link_to  prize_condition_path(@prize, condition), data: {confirm: 'Are you sure?'}, method: :delete do %>
-      <button class='delete-button'> Delete </button>
+      <button class='small-button delete-button'> Delete </button>
     <% end %>
   </span>
 </div>
